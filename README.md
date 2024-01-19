@@ -3,7 +3,7 @@
 ## 使い方
 
 ### claspとは
-claspは、GASをターミナルから開発・管理するためのオープンソースのツール
+- claspは、GASをターミナルから開発・管理するためのオープンソースのツール
 
 ### ログイン
 
@@ -13,7 +13,7 @@ $ clasp login
 
 ### GASを作成する
 
-claspを使って、GASを作成する
+- claspを使って、GASを作成する
 
 ```
 $ clasp create –title “Clasp Codelab”
@@ -33,3 +33,4 @@ $ clasp open
 
 
 ## 参考
+- URL　https://somachob.com/gas-vscode/

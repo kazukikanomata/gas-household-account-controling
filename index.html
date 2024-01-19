@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <script type="text/javascript">
+    // 固定費毎月
+      function calculateCommunication(){
+        google.script.run
+        .withSuccessHandler()
+        .calculateCommunicationCost(document.forms['固定費（毎月）'].elements.通信費.value);
+      }
+      function calculateInsurance(){
+        google.script.run
+        .withSuccessHandler()
+        .calculateInsuranceFee(document.forms["固定費（毎月）"].elements.保険料.value);
+      }
+      function calculateHousing(){
+        google.script.run
+        .withSuccessHandler()
+        .calculateHousingCost(document.forms["固定費（毎月）"].elements.住居費.value);
+      }
+      function calculateUtility(){
+        google.script.run
+        .withSuccessHandler()
+        .calculateUtilityCost(document.forms["固定費（毎月）"].elements.水道光熱費.value);
+      }
+      function calculateEducation(){
+        google.script.run
+        .withSuccessHandler()
+        .calculateEducationCost(document.forms["固定費（毎月）"].elements.教育費.value);
+      }
+      function calculateSubscription(){
+        google.script.run
+        .withSuccessHandler()
+        .calculateSubscriptionCost(document.forms["固定費（毎月）"].elements.サブスク.value);
+      }
+      // 固定費（上記以外）
+      function calculateTax(){
+        google.script.run
+        .withSuccessHandler()
+        .calculateTaxCost(document.forms["固定費（上記以外）"].elements.税金.value);
+      }
+      function calculateSocialInsurance(){
+        google.script.run
+        .withSuccessHandler()
+        .calculateSocialInsurancePremiums(document.forms["固定費（上記以外）"].elements.社会保険料.value);
+      }
+      function calculateFireInsurance(){
+        google.script.run
+        .withSuccessHandler()
+        .calculateFireInsurancePremium(document.forms["固定費（上記以外）"].elements.火災保険料.value);
+      }
+      function calculateAnnual(){
+        google.script.run
+        .withSuccessHandler()
+        .calculateAnnualFee(document.forms["固定費（上記以外）"].elements.年会費.value);
+      }
+      function calculateVehicleInspection(){
+        google.script.run
+        .withSuccessHandler()
+        .calculateVehicleInspectionCost(document.forms["固定費（上記以外）"].elements.車検費用.value);
+      }
+      function calculateTuition(){
+        google.script.run
+        .withSuccessHandler()
+        .calculateTuitionFee(document.forms["固定費（上記以外）"].elements.授業料.value);
+      }
+      // 変動費（毎月）
+      function calculateFood(){
+        google.script.run
+        .withSuccessHandler()
+        .calculateFoodExpenses(document.forms["変動費（毎月）"].elements.食費.value);
+      }
+      function calculateDailyNecessities(){
+        google.script.run
+        .withSuccessHandler()
+        .calculateDailyNecessitiesCost(document.forms["変動費（毎月）"].elements.日用品費.value);
+      }
+      function calculateClothing(){
+        google.script.run
+        .withSuccessHandler()
+        .calculateClothingExpenses(document.forms["変動費（毎月）"].elements.被服費.value);
+      }
+      function calculateMedical(){
+        google.script.run
+        .withSuccessHandler()
+        .calculateMedicalBills(document.forms["変動費（毎月）"].elements.医療費.value);
+      }
+      function calculateBeauty(){
+        google.script.run
+        .withSuccessHandler()
+        .calculateBeautyExpenses(document.forms["変動費（毎月）"].elements.美容費.value);
+      }
+      function calculateTransportation(){
+        google.script.run
+        .withSuccessHandler()
+        .calculatetransportationExpenses(document.forms["変動費（毎月）"].elements.交通費.value);
+      }
+      // 変動費（上記以外）
+      function calculateFurniture(){
+        google.script.run
+        .withSuccessHandler()
+        .calculateFurnitureHomeAppliances(document.forms["変動費（上記以外）"].elements.家具家電.value);
+      }
+      function calculateTravel(){
+        google.script.run
+        .withSuccessHandler()
+        .calculateTravelExpenses(document.forms["変動費（上記以外）"].elements.旅行.value);
+      }
+      function calculateBuyCar(){
+        google.script.run
+        .withSuccessHandler()
+        .calculateBuyCarCost(document.forms["変動費（上記以外）"].elements.車購入.value);
+      }
+      function calculateCarExtra(){
+        google.script.run
+        .withSuccessHandler()
+        .calculateCarExtraCost(document.forms["変動費（上記以外）"].elements.車諸経費.value);
+      }
+      function calculateCeremonialOccasions(){
+        google.script.run
+        .withSuccessHandler()
+        .calculateCeremonialOccasionsCost(document.forms["変動費（上記以外）"].elements.冠婚葬祭.value);
+      }
+      function calculateDiseaseHealing(){
+        google.script.run
+        .withSuccessHandler()
+        .calculateDiseaseHealingFee(document.forms["変動費（上記以外）"].elements.病気治療費.value);
+      }
+      function calculateGraduationAdmission(){
+        google.script.run
+        .withSuccessHandler()
+        .calculateGraduationAdmissionFee(document.forms["変動費（上記以外）"].elements.卒業入学費.value);
+      }
+      function calculateMoving(){
+        google.script.run
+        .withSuccessHandler()
+        .calculateMovingExpenses(document.forms["変動費（上記以外）"].elements.引越.value);
+      }
+      function calculateReserve(){
+        google.script.run
+        .withSuccessHandler()
+        .calculateReserveFund(document.forms["変動費（上記以外）"].elements.予備費.value);
+      }
+
+    </script>
+  </head>
+  <body>
+    <h1>家計簿からスプシに転記する！</h1>
+      <fieldset>
+        <legend>固定費（毎月）</legend>
+        <div class="固定費（毎月）">
+          <form name="固定費（毎月）">
+            <div class="通信費">
+              <label for="通信費">通信費：</label>
+              <input type="number" name="通信費" id="通信費">
+              <input type="button" onclick="calculateCommunication()" value="加算">
+            </div>
+            <div class="保険料">
+              <label for="保険料">保険料：</label>
+              <input type="number" name="保険料" id="保険料">
+              <input type="button" onclick="calculateInsurance()" value="加算">
+            </div>
+            <div class="住居費">
+              <label for="住居費">住居費：</label>
+              <input type="number" name="住居費" id="住居費">
+              <input type="button" onclick="calculateHousing()" value="加算">
+            </div>
+            <div class="水道光熱費">
+              <label for="水道光熱費">水道光熱費：</label>
+              <input type="number" name="水道光熱費" id="水道光熱費">
+              <input type="button" onclick="calculateUtility()" value="加算">
+            </div>
+            <div class="教育費">
+              <label for="教育費">教育費：</label>
+              <input type="number" name="教育費" id="教育費">
+              <input type="button" onclick="calculateEducation()" value="加算">
+            </div>
+            <div class="サブスク">
+              <label for="サブスク">各種サブスク：</label>
+              <input type="number" name="サブスク" id="サブスク">
+              <input type="button" onclick="calculateSubscription()" value="加算">
+            </div>
+            <input type="reset" value="リセット">
+          </form>
+        </div>
+      </fieldset>
+      <br>
+      <fieldset>
+        <legend>固定費（上記以外）</legend>
+        <div class="固定費（上記以外）">
+          <form name="固定費（上記以外）">
+            <div class="税金">
+              <label for="税金">税金：</label>
+              <input type="number" name="税金" id="税金">
+              <input type="button" onclick="calculateTax()" value="加算">
+            </div>
+            <div class="社会保険料">
+              <label for="社会保険料">社会保険料：</label>
+              <input type="number" name="社会保険料" id="社会保険料">
+              <input type="button" onclick="calculateSocialInsurance()" value="加算">
+            </div>
+            <div class="火災保険料">
+              <label for="火災保険料">火災保険料：</label>
+              <input type="number" name="火災保険料" id="火災保険料">
+              <input type="button" onclick="calculateFireInsurance()" value="加算">
+            </div>
+            <div class="年会費">
+              <label for="年会費">年会費（クレカ）：</label>
+              <input type="number" name="年会費" id="年会費">
+              <input type="button" onclick="calculateAnnual()" value="加算">
+            </div>
+            <div class="車検費用">
+              <label for="車検費用">車検費用：</label>
+              <input type="number" name="車検費用" id="車検費用">
+              <input type="button" onclick="calculateVehicleInspection()" value="加算">
+            </div>
+            <div class="授業料">
+              <label for="授業料">教育費（授業料）：</label>
+              <input type="number" name="授業料" id="授業料">
+              <input type="button" onclick="calculateTuition()" value="加算">
+            </div>
+            <input type="reset" value="リセット">
+          </form>
+        </div>
+      </fieldset>
+      <br>
+      <fieldset>
+        <legend>変動費（毎月）</legend>
+        <div class="変動費（毎月）">
+          <form name="変動費（毎月）">
+            <div class="食費">
+              <label for="食費">食費：</label>
+              <input type="number" name="食費" id="食費">
+              <input type="button" onclick="calculateFood()" value="加算">
+            </div>
+            <div class="日用品費">
+              <label for="日用品費">日用品費：</label>
+              <input type="number" name="日用品費" id="日用品費">
+              <input type="button" onclick="calculateDailyNecessities()" value="加算">
+            </div>
+            <div class="被服費">
+              <label for="被服費">被服費：</label>
+              <input type="number" name="被服費" id="被服費">
+              <input type="button" onclick="calculateClothing()" value="加算">
+            </div>
+            <div class="医療費">
+              <label for="医療費">医療費：</label>
+              <input type="number" name="医療費" id="医療費">
+              <input type="button" onclick="calculateMedical()" value="加算">
+            </div>
+            <div class="美容費">
+              <label for="美容費">美容費：</label>
+              <input type="number" name="美容費" id="美容費">
+              <input type="button" onclick="calculateBeauty()" value="加算">
+            </div>
+            <div class="交通費">
+              <label for="交通費">ガソリン・交通費：</label>
+              <input type="number" name="交通費" id="交通費">
+              <input type="button" onclick="calculateTransportation()" value="加算">
+            </div>
+            <input type="reset" value="リセット">
+          </form>
+        </div>
+      </fieldset>
+      <br>
+      <fieldset>
+        <legend>変動費（上記以外）</legend>
+        <div class="変動費（上記以外）">
+          <form name="変動費（上記以外）">
+            <div class="家具家電">
+              <label for="家具家電">家具家電：</label>
+              <input type="number" name="家具家電" id="家具家電">
+              <input type="button" onclick="calculateFurniture()" value="加算">
+            </div>
+            <div class="旅行">
+              <label for="旅行">旅行・帰省：</label>
+              <input type="number" name="旅行" id="旅行">
+              <input type="button" onclick="calculateTravel()" value="加算">
+            </div>
+            <div class="車購入">
+              <label for="車購入">車購入：</label>
+              <input type="number" name="車購入" id="車購入">
+              <input type="button" onclick="calculateBuyCar()" value="加算">
+            </div>
+            <div class="車諸経費">
+              <label for="車諸経費">車諸経費(バッテリー・タイヤ交換)：</label>
+              <input type="number" name="車諸経費" id="車諸経費">
+              <input type="button" onclick="calculateCarExtra()" value="加算">
+            </div>
+            <div class="冠婚葬祭">
+              <label for="冠婚葬祭">冠婚葬祭：</label>
+              <input type="number" name="冠婚葬祭" id="冠婚葬祭">
+              <input type="button" onclick="calculateCeremonialOccasions()" value="加算">
+            </div>
+            <div class="病気治療費">
+              <label for="病気治療費">病気治療費：</label>
+              <input type="number" name="病気治療費" id="病気治療費">
+              <input type="button" onclick="calculateDiseaseHealing()" value="加算">
+            </div>
+            <div class="卒業入学費">
+              <label for="卒業入学費">卒業入学費：</label>
+              <input type="number" name="卒業入学費" id="卒業入学費">
+              <input type="button" onclick="calculateGraduationAdmission()" value="加算">
+            </div>
+            <div class="引越">
+              <label for="引越">引越：</label>
+              <input type="number" name="引越" id="引越">
+              <input type="button" onclick="calculateMoving()" value="加算">
+            </div>
+            <div class="予備費">
+              <label for="予備費">予備費：</label>
+              <input type="number" name="予備費" id="予備費">
+              <input type="button" onclick="calculateReserve()" value="加算">
+            </div>
+            <input type="reset" value="リセット">
+          </form>
+        </div>
+      </fieldset>
+      <br>
+  </body>
+</html>
